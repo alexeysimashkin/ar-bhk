@@ -11,6 +11,12 @@ const API = '/api/flights';
 
 const $ = id => document.getElementById(id);
 
+// Скрыть спиннер загрузки
+const spinnerOverlay = $('spinnerOverlay');
+setTimeout(() => {
+  if (spinnerOverlay) spinnerOverlay.style.display = 'none';
+}, 1500);
+
 const clockTime = $('clockTime');
 const LOCAL_OFFSET = 5 * 60;
 function getLocalNow() {
